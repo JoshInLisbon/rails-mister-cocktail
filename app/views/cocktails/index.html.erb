@@ -1,5 +1,7 @@
 <%= render 'components/notice_alert' %>
 
+<%= flash[:error] %>
+
 <%= render 'components/ingredient_error_msg_alert' %>
 
 <h1>Cocktail List</h1>
@@ -13,3 +15,28 @@
 
 
 
+<% %w[warning success danger].each do |type| %>
+  <% if flash[type].present? %>
+    <div class="alert alert-<%= type %>">
+      <%= flash[type] %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<!-- ➜  rails-mister-cocktail git:(master) ✗ rails c
+Running via Spring preloader in process 42618
+Loading development environment (Rails 5.2.3)
+irb(main):001:0> hash = { one: 1 }
+=> {:one=>1}
+irb(main):002:0> hash[:one]
+=> 1
+irb(main):003:0> hash['one']
+=> nil
+irb(main):004:0> hash = hash.with_indifferent_access
+=> {"one"=>1}
+irb(main):005:0> hash['one']
+=> 1
+irb(main):006:0> hash[:one]
+=> 1
+irb(main):007:0>  -->

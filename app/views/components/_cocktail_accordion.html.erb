@@ -40,8 +40,8 @@
 
             <div class="collapse mb-3" id="collapseExample2">
               <div class="card card-body">
-                <%= simple_form_for [cocktail, @dose] do |f| %>
-                  <%= f.input :ingredient, label: 'Ingredient name', as: :select, collection: @ingredients - cocktail_ingredients %>
+                <%= simple_form_for [cocktail, @dose], html: { autocomplete: 'off' } do |f| %>
+                  <%= f.association :ingredient, label: 'Ingredient name', collection: @ingredients - cocktail_ingredients %>
                   <%= f.input :description %>
                   <%= f.submit class: 'btn btn-primary' %>
                 <% end %>
