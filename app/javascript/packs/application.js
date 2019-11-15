@@ -17,3 +17,6 @@
 
 console.log('Hello World from Webpacker')
 import 'bootstrap';
+import { click_to_expand } from '../components/expand_doses.js';
+
+click_to_expand();

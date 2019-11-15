@@ -1,0 +1,11 @@
+<h1>Cocktail List</h1>
+<p>There are <%= Cocktail.count %> cocktails to choose from:</p>
+
+<%#= link_to '+ New cocktail', new_cocktail_path, class: 'btn btn-primary mb-3' %>
+
+<%= render 'components/new_cocktail_dropdown' %>
+
+<%= render 'components/cocktail_accordion' %>
+
+
+

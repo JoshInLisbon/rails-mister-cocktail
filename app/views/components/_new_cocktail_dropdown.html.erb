@@ -1,0 +1,13 @@
+
+<button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  + New cocktail
+</button>
+
+<div class="collapse mb-3" id="collapseExample">
+  <div class="card card-body">
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name, label: 'Cocktail name' %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

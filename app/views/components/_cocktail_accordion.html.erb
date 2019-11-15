@@ -1,0 +1,60 @@
+<div id="accordion">
+
+  <% @cocktails.each_with_index do |cocktail, i| %>
+
+  <div class="card">
+    <div class="card-header" id="heading<%= i %>">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= i %>" aria-expanded="true" aria-controls="collapse<%= i %>">
+          <%= cocktail.name %> (<%= cocktail.doses.count %> ingredients)
+        </button>
+      </h5>
+    </div>
+    <div id="collapse<%= i %>" class="collapse collapsed" aria-labelledby="heading<%= i %>" data-parent="#accordion">
+      <div class="card-body">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Ingredient</th>
+              <th scope="col">Measure</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% cocktail.doses.each do |dose| %>
+
+              <tr>
+                <td><%= dose.ingredient.name %></td>
+                <td><%= dose.description %></td>
+              </tr>
+
+            <% end %>
+
+            <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+              + New ingredient
+            </button>
+
+            <div class="collapse mb-3" id="collapseExample2">
+              <div class="card card-body">
+                <%= simple_form_for [cocktail, @dose] do |f| %>
+                  <%= f.input :ingredient, label: 'Ingredient name', as: :select, collection: @ingredient_names %>
+                  <%= f.input :description %>
+                  <%= f.submit class: 'btn btn-primary' %>
+                <% end %>
+              </div>
+            </div>
+
+            <%#= render 'components/new_dose_dropdown' %>
+
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>
