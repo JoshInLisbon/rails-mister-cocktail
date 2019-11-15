@@ -1,7 +1,10 @@
 class DosesController < ApplicationController
   def create
-    # to do, only let someone select ingredients not assigned fore new dose!
-    # to do, route after error with ing
+
+    # to do, route with variable not params after error?
+    # alphabetical ingredients
+    # ajax / not to reload
+
     @dose = Dose.new(dose_params)
     @cocktail_w_ingredient = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.find(params[:dose][:ingredient])
