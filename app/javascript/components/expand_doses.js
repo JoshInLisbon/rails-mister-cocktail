@@ -1,7 +1,7 @@
-const click_to_expand = () => {
-  document.addEventListener('click', (event) => {
-    console.log(event.target.id)
-  });
-};
+// const click_to_expand = () => {
+//   document.addEventListener('click', (event) => {
+//     console.log(event.target.id)
+//   });
+// };
 
-export { click_to_expand }
+// export { click_to_expand }

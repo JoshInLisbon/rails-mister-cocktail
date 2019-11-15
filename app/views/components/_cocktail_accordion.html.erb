@@ -2,6 +2,8 @@
 
   <% @cocktails.each_with_index do |cocktail, i| %>
 
+  <%# cocktail = @cocktail_w_ingredient unless @cocktail_w_ingredient.nil? %>
+
   <div class="card">
     <div class="card-header" id="heading<%= i %>">
       <h5 class="mb-0">
@@ -38,7 +40,7 @@
             <div class="collapse mb-3" id="collapseExample2">
               <div class="card card-body">
                 <%= simple_form_for [cocktail, @dose] do |f| %>
-                  <%= f.input :ingredient, label: 'Ingredient name', as: :select, collection: @ingredient_names %>
+                  <%= f.input :ingredient, label: 'Ingredient name', as: :select, collection: @ingredients %>
                   <%= f.input :description %>
                   <%= f.submit class: 'btn btn-primary' %>
                 <% end %>
