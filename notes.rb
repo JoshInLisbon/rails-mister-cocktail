@@ -61,3 +61,40 @@ A user can delete a dose that belongs to an existing cocktail. How can we make a
 DELETE "doses/25"
 
 Do we need an IngredientsController?
+
+
+# heroku
+
+> heroku login
+
+> heroku create mr-cocktail-9000 --region eu
+
+> git remote -v
+
+# now have two remote repositories
+# origin (github)
+# heroku (heroku)
+
+heroku  https://git.heroku.com/mr-cocktail-9000.git (fetch)
+heroku  https://git.heroku.com/mr-cocktail-9000.git (push)
+origin  git@github.com:JoshInLisbon/rails-mister-cocktail.git (fetch)
+origin  git@github.com:JoshInLisbon/rails-mister-cocktail.git (push)
+
+share: git push origin master
+deploy: git push heroku master
+
+master is BRANCH name
+
+to push:
+
+> git push heroku master
+
+> heroku run rails db:migrate
+
+# remember you need to include rails
+# heroku has lots of customers on different software tools
+# so need to use rails
+
+
+
+

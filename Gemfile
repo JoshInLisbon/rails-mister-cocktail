@@ -6,8 +6,11 @@ ruby '2.6.3'
 # safe api parsing
 gem 'rest-client'
 
-# gem jquery
+# gem 'jquery'
 # for jquery
+
+# faker for seeds
+gem 'faker'
 
 
 # LeWagon Suggestions
@@ -51,7 +54,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # faker for seeds
-  gem 'faker'
+  # gem 'faker'
+  # I moved it from here because after heroku deploy
+  # I was not able to run heroku run rails db:seed
+  # because it is not in deployment
 end
 
 group :development do
