@@ -12,6 +12,8 @@ gem 'rest-client'
 # faker for seeds
 gem 'faker'
 
+# dotenv for rails.... secret info
+gem 'dotenv-rails', groups: [:development, :test]
 
 # LeWagon Suggestions
 gem 'autoprefixer-rails'
