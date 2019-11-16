@@ -1,10 +1,11 @@
 <%= render 'components/notice_alert' %>
 
-<%= flash[:error] %>
+
 
 <%= render 'components/ingredient_error_msg_alert' %>
 
 <h1>Cocktail List</h1>
+
 <p>There are <%= Cocktail.count %> cocktails to choose from:</p>
 
 <%#= link_to '+ New cocktail', new_cocktail_path, class: 'btn btn-primary mb-3' %>
@@ -14,7 +15,8 @@
 <%= render 'components/cocktail_accordion' %>
 
 
-
+<%#= flash[:error] %>
+<!-- a useful way to make alerts with flash[:warning] flash[:success] flash[:danger] -->
 <% %w[warning success danger].each do |type| %>
   <% if flash[type].present? %>
     <div class="alert alert-<%= type %>">

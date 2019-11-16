@@ -7,6 +7,8 @@
   <div class="card card-body">
     <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
       <%= f.input :name, label: 'Cocktail name' %>
+      <%= f.input :photo, class: 'btn btn-primary' %>
+      <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>

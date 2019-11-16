@@ -14,6 +14,10 @@ gem 'faker'
 
 # dotenv for rails.... secret info
 gem 'dotenv-rails', groups: [:development, :test]
+# gem for images
+gem 'cloudinary', '~> 1.9.1'
+# upload files associated to models
+gem 'carrierwave', '~> 1.2'
 
 # LeWagon Suggestions
 gem 'autoprefixer-rails'

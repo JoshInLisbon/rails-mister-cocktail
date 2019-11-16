@@ -33,7 +33,10 @@ Cocktail.destroy_all
 
 puts "creating 8 cocktails"
 8.times do
-  cocktail = Cocktail.create(name: Faker::DcComics.hero)
+  cocktail = Cocktail.create(
+    name: Faker::DcComics.hero,
+    photo: File.new("#{Rails.root}/db/seed_images/#{rand(1..4)}.jpg")
+  )
   puts "adding doses"
   rand(2..5).times do
     Dose.create(
