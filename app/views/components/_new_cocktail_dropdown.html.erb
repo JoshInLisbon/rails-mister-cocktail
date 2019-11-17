@@ -1,15 +1,34 @@
 
 <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  + New cocktail
+  + New Cocktail
 </button>
 
 <div class="collapse mb-3" id="collapseExample">
   <div class="card card-body">
     <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
       <%= f.input :name, label: 'Cocktail name' %>
-      <%= f.input :photo, class: 'btn btn-primary' %>
-      <%= f.input :photo_cache, as: :hidden %>
+      <%#= f.input :photo, class: 'btn btn-primary' %>
+
+      <div class="mb-3">
+        <label id="cocktail_photo_upload_btn">
+          <span class="btn btn-dark">Upload Cocktail Photo</span> <abbr title="required">*</abbr>
+          <div id="fileNameDiv" class="text-success mt-2"></div>
+          <span style="display:none;">
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </span>
+        </label>
+      </div>
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
+
+<script>
+//  const upload = document.querySelector('#cocktail_photo');
+//    upload.addEventListener('change', (event) => {
+//      const fileName = upload.value.match(/[^\\]*\.(jpg|png|gif|tif)/i)[0];
+//      const fileNameDiv = document.querySelector('#fileNameDiv');
+//      fileNameDiv.innerHTML = `✅ ${fileName}`
+//    });
+</script>

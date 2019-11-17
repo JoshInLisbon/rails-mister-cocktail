@@ -6,6 +6,7 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
 
   validates :name, uniqueness: true, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 
@@ -19,6 +20,8 @@ class Cocktail < ApplicationRecord
   # this is also better becasue with a defualt photo
   # I fill my db with shit I don't need.
 
+
+  # see seeds... for File.new()
 
   # private
 

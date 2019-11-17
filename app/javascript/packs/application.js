@@ -20,3 +20,13 @@ import 'bootstrap';
 // import { click_to_expand } from '../components/expand_doses.js';
 
 // click_to_expand();
+import { check_file_selected } from '../components/check_file_selected'
+
+check_file_selected();
+
+if(document.querySelector("#cocktail_photo").value != "") {
+   // you have a file
+   console.log("hello!")
+   // const cocktail_photo_file = document.getElementById("cocktail_photo").value;
+   // console.log(cocktail_photo_file);
+}
